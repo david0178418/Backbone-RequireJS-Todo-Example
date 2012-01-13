@@ -1,0 +1,42 @@
+body {
+	padding: 20px;
+}
+
+#content {
+	width: 400px;
+}
+
+#list li{
+	list-style-type: none;
+}
+
+.todo-item > .edit-field {
+	display: none;
+}
+
+.todo-item.edit > .edit-field {
+	display: block;
+}
+
+.todo-item.edit > .listing {
+	display: none;
+}
+
+.label.completed {
+	text-decoration: line-through;
+}
+
+#remaining > div{
+	text-align: right;
+}
+
+#add-item,
+.remove {
+	cursor: hand;
+	cursor: pointer;
+}
+
+span.remove:hover,
+span.label:hover {
+	background-color: #eeeeee;
+}

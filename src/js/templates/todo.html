@@ -1,0 +1,12 @@
+<div class="todo-item">
+	<div class="listing">
+		<input class="complete" type="checkbox" <% if(completed) { print('checked="checked"');} %> /> <span class="label <% if(completed) { print('completed"');} %>"><%=label%></span>
+	</div>
+	<div class="edit-field">
+		<input class="label-edit" type="input" type="text" value="<%=label%>" /> <input class="save" type="button" value="Save" /> <input class="cancel" type="button" value="Cancel" />  
+	</div>
+</div>
+<div>
+	<span class="remove"><small>remove</small></span>
+</div>
+<hr/>
