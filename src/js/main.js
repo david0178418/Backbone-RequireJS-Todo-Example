@@ -8,7 +8,7 @@
 			underscore : '../../libs/js/underscore-min',
 			backbone : '../../libs/js/backbone-min'		//
 		},
-		basePath : 'src/js'
+		baseUrl : 'src/js'
 	});
 	
 	require([
