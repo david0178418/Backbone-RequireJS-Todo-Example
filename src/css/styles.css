@@ -30,12 +30,18 @@ body {
 	text-align: right;
 }
 
+#add-item {
+	padding: 4px;
+	border: 1px solid black;
+}
+
 #add-item,
 .remove {
 	cursor: hand;
 	cursor: pointer;
 }
 
+#add-item,
 span.remove:hover,
 span.label:hover {
 	background-color: #eeeeee;

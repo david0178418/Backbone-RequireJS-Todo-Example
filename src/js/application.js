@@ -1,19 +1,16 @@
-(function() {
-	"use strict";
-	
-	define([
-			'jqueryLoader',
-			'views/main-view'
-		],
-		function($, MainView) {
-			
-			return {
-				initialize : function() {
-					var app = new MainView({
-						el : $('#content')[0]
-					});
-				}
-			};
-		}
-	);
-})();
+define([
+		'views/main-view'
+	],
+	function(MainView) {
+		"use strict";
+		
+		return {
+			initialize : function() {
+
+				var app = new MainView({
+					el : document.getElementById('content')
+				});
+			}
+		};
+	}
+);

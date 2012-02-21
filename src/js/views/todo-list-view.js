@@ -1,43 +1,38 @@
-(function() {
-	"use strict";
-	
-	define([
-			'jqueryLoader',
-			'underscore',
-			'backbone',
-			'views/todo-view'
-		],
-		function($, _, Backbone, TodoView) {
+define([
+		'jqueryLoader',
+		'underscore',
+		'backbone',
+		'views/todo-view'
+	],
+	function($, _, Backbone, TodoView) {
+		"use strict";
+		
+		return Backbone.View.extend({
+			tagName : 'ul',
 			
-			return Backbone.View.extend({
-				tagName : 'ul',
+			initialize : function() {
+				_.bindAll(this, 'addTodo');
+				this.collection.bind('add', this.addTodo, this);
+				this.collection.bind('reset', this.render, this);
 				
-				initialize : function() {
-					_.bindAll(this, 'addTodo');
-					this.collection.bind('add', this.addTodo, this);
-					this.collection.bind('reset', this.render, this);
-					
-					this.render();
-				},
+				this.render();
+			},
+			
+			render : function() {
+				this.$el.empty();
 				
-				render : function() {
-					var htmlBody = $(this.el);
-					
-					htmlBody.empty();
-					
-					this.collection.each(this.addTodo);
-					
-					return this;
-				},
+				this.collection.each(this.addTodo);
 				
-				addTodo : function(todo) {
-					var todoView = new TodoView({
-						model : todo
-					});
-						
-					$(this.el).append(todoView.el)
-				}
-			});
-		}
-	);
-})();
+				return this;
+			},
+			
+			addTodo : function(todo) {
+				var todoView = new TodoView({
+					model : todo
+				});
+					
+				this.$el.append(todoView.el)
+			}
+		});
+	}
+);
