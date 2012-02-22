@@ -7,7 +7,7 @@ define([
 		"use strict";
 		
 		return Backbone.Collection.extend({
-			url : 'data.json',
+			url : 'todos',
 			
 			model : TodoModel,
 			
