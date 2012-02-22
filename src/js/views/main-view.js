@@ -16,7 +16,7 @@ define([
 			events : {
 				'click #add-item' : 'newItem',
 				'click #new-item .save' : 'saveNewTodo',
-				'click #new-item .cancel' : 'closeNewTodo',
+				'click #new-item .cancel' : 'closeNewTodo'
 			},
 			
 			initialize : function() {

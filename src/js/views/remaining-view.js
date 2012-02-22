@@ -25,7 +25,7 @@ define([
 				}));
 				
 				return this;
-			},
+			}
 		});
 	}
 );
